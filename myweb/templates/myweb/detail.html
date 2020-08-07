@@ -204,6 +204,15 @@
         </div>
       </div>
 
+    <div clas="row">
+        <h1>{( question.question_text </h1>
+        <ul>
+            {% for c in choices %}
+                <li>{( c.choice_text )} </li>
+            {% endfor %}
+        </ul>
+    </div>
+
       <footer id="footer">
         <div class="row">
           <div class="col-lg-12">
