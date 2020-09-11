@@ -1,0 +1,21 @@
+{% extends 'myweb/base.html' %}
+{% block title %}Assignment{% endblock %}
+{% block content %}
+  {% if user.is_authenticated %}
+  <li><a href="{% url 'myweb:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="/myweb/{{ question.id }}/">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Web are available.</p>
+{% endif %}
+  {% else %}
+  <h2 align="center"> You are not logged in </h2>
+  <div style="text-align: center"><a href="/Login19"> <button type="button" class="btn btn-outline-danger">LOGIN</button></a>
+  <a href="/register"> <button type="button" class="btn btn-outline-danger">Register </button> </a></div>
+  {% endif %}
+{% endblock %}
+

@@ -1,0 +1,19 @@
+          <li class="nav-item">
+            <a class="nav-link" href="covid19">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="mapcovid19">Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="report19">Report Chart</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li><a href="/account">{{user.username|title}}</a></li>
+          <li><a href="/logout">Logout</a></li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="Login19">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="register19">Register</a>
+           </li>{% endif %}
