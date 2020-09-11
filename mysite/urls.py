@@ -6,7 +6,9 @@ from myweb import views
 urlpatterns = [
     path('', views.index),
     path('myweb/', include('myweb.urls', namespace="myweb")),
+    #ใช้ 'localhost/united'
     path('united', views.united),
+    #ใช้ 'localhost/covid19'
     path('covid19',views.covid19),
     path('mapcovid19',views.mapcovid19),
     path('report19',views.report19),
@@ -16,5 +18,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('questionnaire',views.questionnaire),
     path('Assignment',views.Assignment),
-    url(r'^myweb/', include('myweb.urls', namespace="myweb")),
+    #url(r'^myweb/', include('myweb.urls', namespace="myweb")),
 ]
