@@ -1,0 +1,21 @@
+{% extends 'myweb/base.html' %}
+  {% block title %}Login{% endblock %}
+  <!-- Main Content -->
+  {% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="container">
+            <h2>Login</h2>
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+                <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Login</button>
+            </form>
+            Don't have an account? <a href="/register19" target="blank"><strong>Register here</strong></a>!
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+
