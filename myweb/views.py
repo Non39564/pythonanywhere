@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from .models import Question, Choice, displayusername, Signup
+from .forms import FeedbackForm, EmailSignupForm
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import logout, authenticate, login
 from django.contrib import messages
-from .forms import FeedbackForm, EmailSignupForm
+from .forms import NewUserForm
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.views import generic
@@ -13,6 +14,7 @@ from django.contrib.auth.models import User
 from django.conf import settings
 import json
 import requests
+from django.http import Http404
 
 # Create your views here.
 def index(req):
