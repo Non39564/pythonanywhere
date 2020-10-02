@@ -15,7 +15,8 @@ urlpatterns = [
     #path('<int:pk>/Assignment', views.DetailView.as_view(), name='detail'),
     path('<int:pk>/results/', views.ResultsView.as_view(), name='results'),
     #ใช้ 'localhost/myweb/4/vote'
-    path('<int:question_id>/vote/', views.vote, name='vote'),
+    #path('<int:question_id>/vote/', views.vote, name='vote'),
+    path('vote/<int:question_id>/', views.vote, name='vote'),
     #ใช้ 'localhost/myweb/detail/4/'
     path('detail/<int:question_id>/',views.detail),
     path("lastuser/",views.showusername),

@@ -9,6 +9,6 @@
 {% endfor %}
 </ul>
 
-<a href="{% url 'myweb:detail' question.id %}">Vote again?</a>
+<a href="/myweb/detail/{{question.id}}">Vote again?</a>
 {% endblock %}
 
