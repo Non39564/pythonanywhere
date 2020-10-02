@@ -32,4 +32,4 @@ class EmailSignupForm(forms.ModelForm):
 class FeedbackForm(forms.ModelForm):
     class Meta:
         model = Feedback
-        exclude = []
+        fields = ['customer_name','email','product','details','happy']

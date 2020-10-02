@@ -8,7 +8,7 @@
   <tr>
     <td>
             {% for result in displayusername %}
-            {{result.username}}
+            {{result.username}}<br>
             {% endfor %}
     </td>
 </table>
@@ -27,6 +27,12 @@
                 <div class="form-group">
                     {{ form }}
                     <button type="submit" class="submit">Subscribe</button>
+                </div>
+                <div>
+                    <h2>Feed back</h2>
+                    {% for a in feed %}
+                    {{a.details}}<br>
+                    {% endfor %}
                 </div>
               </form>
             </div>

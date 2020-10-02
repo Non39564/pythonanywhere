@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
-from .models import Question, Choice, displayusername, Signup
+from .models import Question, Choice, displayusername, Signup, Feedback
 from .forms import FeedbackForm, EmailSignupForm
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import logout, authenticate, login
@@ -41,11 +41,14 @@ def questionnaire(req):
 def showusername(req):
     displaynames=User.objects.all()
     form = EmailSignupForm()
+    feed= Feedback.objects.all()
     context = {
         'displayusername':displaynames,
-        'form': form
+        'form': form,
+        'feed': feed
     }
     return render(req, 'myweb/lastuser.html', context)
+
 
 def register19(req):
     if req.method == "POST":
@@ -194,7 +197,8 @@ def feedback_form(request):
         form = FeedbackForm(request.POST)
 
         if form.is_valid():
-            form.save()
+            a = form.save()
+            a.save()
             return render(request, 'myweb/thanks.html')
     else:
         form = FeedbackForm()
