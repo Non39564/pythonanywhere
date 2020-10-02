@@ -11,7 +11,7 @@
             <a class="nav-link" href="lastuser">Last User</a>
           </li>
           {% if user.is_authenticated %}
-          <li><a href="/account">{{user.username|title}}</a></li>
+          <li><a href="#">{{user.username|title}}</a></li>
           <li><a href="/logout">Logout</a></li>
           {% else %}
           <li class="nav-item">
